@@ -1,1 +1,1 @@
-# bash-basics
+Exercising basic Bash scripting
