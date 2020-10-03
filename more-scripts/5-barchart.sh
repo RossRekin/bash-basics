@@ -2,7 +2,7 @@
 LOGS_FILE=$1
 
 
-awk -F '[:[]' '{split($1,b," "); split($2,a,"/");print a[2],a[3],b[1]}' $LOGS_FILE | sort -M -r | uniq -c > temp_logs.txt
+awk -F '[:[]' '{split($1,b," "); split($2,a,"/");print a[2],a[3],b[1]}' $LOGS_FILE | sort sort -k2n -k1M | uniq -c > temp_logs.txt
 months=$(awk '{print $2 "." $3}' temp_logs.txt | uniq)
 
 for MONTH in ${months[@]}; do
